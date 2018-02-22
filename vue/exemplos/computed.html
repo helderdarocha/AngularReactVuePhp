@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div id="example">
+    <p>Original message: "{{ message }}"</p>
+    <p>Computed reversed message: "{{ reversedMessage }}"</p>
+</div>
+
+<div id="demo">
+    <p>Watching: "{{ lastName }}, {{ firstName }}: {{ fullName }}"</p>
+</div>
+
+<div id="demo2">
+    <p>Reacting: "{{ lastName }}, {{ firstName }}: {{ fullName }}"</p>
+</div>
+
+<div id="watch-example">
+    <p>
+        Ask a yes/no question:
+        <input v-model="question">
+    </p>
+    <p>{{ answer }}</p>
+    <img :src="image" />
+</div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+<script src="https://unpkg.com/vue"></script>
+<script src="js/computed.js"></script>
+
+</html>

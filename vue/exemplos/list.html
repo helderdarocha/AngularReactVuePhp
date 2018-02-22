@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+<div id="movieApp">
+    <h3>{{a}}</h3>
+    <h4>Movies</h4>
+    <div v-for="movie in movies" :key="movie.imdb">
+        <img :src="movie.poster" width="150"/><br/>
+        {{movie.title}} ({{movie.year}} {{movie.duration}} min. by {{movie.director.name}}
+        <br/>Cast:<ul>
+        <li v-for="(actor, idx) in movie.actors">{{idx}}: {{actor.name}}</li>
+    </ul>
+    </div>
+    <hr />
+    <h4>Actors</h4>
+    <ul>
+        <li v-for="actor in actors" :key="actor.imdb">
+            {{actor.imdb}}: {{actor.name}}
+        </li>
+    </ul>
+    <hr />
+    <h4>Directors</h4>
+    <ul>
+        <li v-for="director in directors">
+            {{director.name}}
+        </li>
+    </ul>
+    <hr />
+    <h4>For Object</h4>
+    <ul>
+        <li v-for="(value, key, idx) in movies[0]">
+            {{idx}} - {{key}}: {{value}}
+        </li>
+    </ul>
+    <div>
+        <span v-for="n in 10"> {{ n }}</span>
+    </div>
+    <hr />
+    <h4>Component Movies</h4>
+    <div>
+        <movie v-for="item in movies"
+               v-bind:title="item.title"
+               v-bind:year="item.year"
+               v-bind:duration="item.duration"
+               v-bind:poster="item.poster"
+               v-bind:director="item.director"
+               v-bind:actors="item.actors"
+               v-bind:key="item.imdb"></movie>
+    </div>
+    <hr />
+</div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+
+<script src="https://unpkg.com/vue"></script>
+<script src="js/list.js"></script>
+
+</html>

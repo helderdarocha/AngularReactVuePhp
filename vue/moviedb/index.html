@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Filmes</title>
+</head>
+<body>
+<div id="moviedb">
+    <h1>Lista de filmes</h1>
+    <select v-model="selectedMovie">
+        <option v-for="movie in movies"
+                :key="movie.imdb"
+                :value="movie">
+            {{movie.title}}
+        </option>
+    </select>
+    <div v-if="selectedMovie">
+        <movie v-bind:title="selectedMovie.title"
+               v-bind:year="selectedMovie.year"
+               v-bind:duration="selectedMovie.duration"
+               v-bind:poster="selectedMovie.poster"
+               v-bind:director="selectedMovie.director"
+               v-bind:actors="selectedMovie.actors"
+               v-bind:key="selectedMovie.imdb">
+        </movie>
+    </div>
+</div>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+<script src="https://unpkg.com/vue"></script>
+<script src="Movie.js"></script>
+</html>

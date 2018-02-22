@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div id="app9">
+    <h3 v-once>{{a}}</h3>
+    <h4><span>{{raw1.toUpperCase()}}</span></h4>
+    <h4><span v-html="raw1"></span></h4>
+    <h4><span>{{raw2}}</span></h4>
+    <h4><span v-html="raw2"></span></h4>
+    <img v-bind:src="image"
+         :title="a.toUpperCase() + '-' + raw1"
+         v-on:click="doSomething"/>
+    <a href="http://vuejs.org"
+       @click.prevent="doSomething">{{a}}</a>
+</div>
+
+</body>
+
+<script src="https://unpkg.com/vue"></script>
+<script src="js/template.js"></script>
+
+</html>

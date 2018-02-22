@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div id="components2">
+    <h3>{{a}}</h3>
+
+    <count-button></count-button>
+    <count-button></count-button>
+    <count-button></count-button>
+
+    <hr />
+
+    <table border="1">
+        <tr is="simple-row"></tr>
+    </table>
+
+    <hr />
+
+    <movie-table></movie-table>
+
+    <hr/>
+    <button @click="toggle">Change View</button>
+    <component :is="currentView"></component>
+</div>
+
+</body>
+
+<script src="https://unpkg.com/vue"></script>
+<script src="js/components2.js"></script>
+
+</html>

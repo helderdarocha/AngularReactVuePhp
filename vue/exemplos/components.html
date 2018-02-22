@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+    <div id="app7">
+        <h3>{{message}}</h3>
+
+        <ol>
+            <actor v-for="person in actors"
+                v-bind:handle="person"
+                v-bind:key="person.imdb"></actor>
+        </ol>
+    </div>
+
+</body>
+
+<script src="https://unpkg.com/vue"></script>
+<script src="js/components.js"></script>
+
+</html>

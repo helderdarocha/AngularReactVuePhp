@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div id="events">
+    <h3>{{a}}</h3>
+</div>
+
+<div id="example-1">
+    <button v-on:click="counter += 1">Add 1</button>
+    <button v-on:click="addTen">Add 10</button>
+    <button v-on:click="addValue" value="100">Add 100</button>
+    <button @click="add(1000)"
+            @keyup.left="counter-=1"
+            @keyup.right="counter+=1"">Add 1000</button>
+    <p>Total count: {{ counter }}.</p>
+</div>
+
+</body>
+
+<script src="https://unpkg.com/vue"></script>
+<script src="js/event.js"></script>
+
+</html>

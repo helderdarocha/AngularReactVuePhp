@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+    <div id="app">
+        <p>{{ message }}</p>
+    </div>
+    <div id="app2" v-bind:title="message">
+        <p>Grunt!</p>
+    </div>
+    <div id="app3">
+        <span v-if="seen">See me!</span>
+    </div>
+    <div id="app4">
+        <ul>
+            <li v-for="director in directors">
+                {{director.name}}
+            </li>
+        </ul>
+    </div>
+    <div id="app5">
+        <p>{{message}}</p>
+        <button v-on:click="reverseIt">Reverse It</button>
+    </div>
+    <div id="app6">
+        <p>{{message}}</p>
+        <input v-model="message">
+    </div>
+</body>
+
+<script src="https://unpkg.com/vue"></script>
+<script src="js/app.js"></script>
+
+</html>

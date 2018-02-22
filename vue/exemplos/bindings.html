@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div id="style-bindings">
+    <div class="hot" v-bind:class="{night: isDark, big: isMobile}">{{a}}</div>
+    <div class="hot" v-bind:class="plainStyle">{{a}}</div>
+    <div class="hot" v-bind:class="warmStyle">{{a}}</div>
+    <div class="hot" v-bind:class="[coldStyle, borderStyle]">{{a}}</div>
+    <hr/>
+    <div>
+        <test-component></test-component>
+        <hr/>
+        <test-component class="big"></test-component>
+        <hr/>
+        <test-component :class="{night: !isDark}"></test-component>
+        <hr/>
+        <test-component :style="{fontSize: '30pt', color: 'light' + defaultColor}"></test-component>
+        <hr/>
+        <test-component :style="styleObject"></test-component>
+    </div>
+</div>
+
+</body>
+
+<script src="https://unpkg.com/vue"></script>
+<script src="js/bindings.js"></script>
+
+</html>

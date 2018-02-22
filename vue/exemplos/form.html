@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div id="form">
+    <h3>{{a}}</h3>
+
+    Eager: <input v-model="message" placeholder="edit me">
+    <p>Message is: {{ message }}</p>
+
+    Lazy: <input v-model.lazy="lazymsg" placeholder="lazy edit me">
+    <p>Message is: {{ lazymsg }}</p>
+
+    Number: <input type="number" v-model.number="repeats">
+    <p>Repeats + Repeats (number): {{repeats + repeats}}</p>
+
+    Not number: <input type="number" v-model="repeats2">
+    <p>Repeats + Repeats (string): {{repeats2 + repeats2}}</p>
+
+    <span>Multiline message is:</span>
+    <p style="white-space: pre-line;">{{ message2 }}</p>
+    <br>
+    <textarea rows="5" cols="20" v-model="message2" placeholder="add multiple lines"></textarea>
+
+    <input type="checkbox" id="lunch" v-model="wantLunch">
+    <label for="lunch">{{lunchStatus}}  (click to change)</label>
+
+    <hr/>
+    <input type="checkbox" id="heat" v-model="preferences" value="Heating">
+    <label for="heat">Heating</label>
+    <input type="checkbox" id="shower" v-model="preferences" value="Shower">
+    <label for="shower">Shower</label>
+    <input type="checkbox" id="bed" v-model="preferences" value="Extra bed">
+    <label for="bed">Extra bed</label>
+
+    <p>Preferences: {{ preferences }}</p>
+
+    <hr/>
+
+    <input type="radio" id="male" value="Male" v-model="sex">
+    <label for="male">Male</label>
+    <br>
+    <input type="radio" id="female" value="Female" v-model="sex">
+    <label for="female">Female</label>
+    <br>
+    <span>Sex: {{ sex }}</span>
+
+    <hr />
+
+    <select v-model="season">
+        <option disabled value="">Please select a season</option>
+        <option>Summer</option>
+        <option>Autumn</option>
+        <option>Winter</option>
+        <option>Spring</option>
+    </select>
+    <span>Season: {{ season }}</span>
+
+    <hr />
+
+    <select v-model="seasons" multiple>
+        <option disabled value="">You can select more seasons</option>
+        <option>Summer</option>
+        <option>Autumn</option>
+        <option>Winter</option>
+        <option>Spring</option>
+    </select>
+    <span>Season: {{ seasons }}</span>
+
+    <hr />
+
+    <select v-model="selectedMovie">
+        <option v-for="movie in movies" :key="movie.imdb" :value="movie">
+            {{movie.title}}
+        </option>
+    </select>
+    <div v-if="selectedMovie">
+    <movie v-bind:title="selectedMovie.title"
+           v-bind:year="selectedMovie.year"
+           v-bind:duration="selectedMovie.duration"
+           v-bind:poster="selectedMovie.poster"
+           v-bind:director="selectedMovie.director"
+           v-bind:key="selectedMovie.imdb"></movie>
+    </div>
+
+</div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+
+<script src="https://unpkg.com/vue"></script>
+<script src="js/form.js"></script>
+
+</html>

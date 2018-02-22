@@ -1,0 +1,42 @@
+#app {
+    font-family: sans-serif;
+    color: mediumvioletred;
+    font-size: 24pt;
+}
+
+.night {
+    background: black;
+    color: white;
+}
+
+.hot {
+    color: lightcoral;
+}
+
+.warm {
+    color: yellow;
+}
+
+.cold {
+    color: lightskyblue;
+}
+
+.big {
+    font-weight: bold;
+    font-family: "Avenir Next Condensed", sans-serif;
+    font-size: 20pt;
+}
+
+.add-border {
+    border: solid 3px lightseagreen;
+    padding: 2px;
+    margin: 2px;
+}
+
+.movie-table, .movie-table td {
+    border: solid 1px black;
+}
+
+.movie-table img {
+    width: 75px;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div id="app">
+    <h3>{{a}}</h3>
+    <button @click.prevent="toggle()">Toggle OK</button>
+    <button @click.prevent="toggleMaybe()">Toggle Maybe</button>
+
+    <div v-show="!ok">
+        <span>Show if not OK</span>
+    </div>
+
+    <div>Result is:
+        <div v-if="ok">
+            <span>Only if OK</span>
+        </div>
+        <div v-else-if="maybe">
+            <span>Maybe</span>
+        </div>
+        <div v-else>
+            <span>No way!</span>
+        </div>
+    </div>
+
+    <div>Result is:
+        <template v-if="ok">
+            <span>Only if OK</span>
+        </template>
+        <template v-else-if="maybe">
+            <span>Maybe</span>
+        </template>
+        <template v-else>
+            <span>No way!</span>
+        </template>
+    </div>
+
+    <template v-if="loginType === 'username'">
+        <label>Username</label>
+        <input placeholder="Enter your username" key="username">
+    </template>
+    <template v-else>
+        <label>Email</label>
+        <input placeholder="Enter your email address" key="email">
+    </template><br/>
+    <button @click.prevent="toggle()">Toggle</button>
+</div>
+
+</body>
+
+<script src="https://unpkg.com/vue"></script>
+<script src="js/conditional.js"></script>
+
+</html>
